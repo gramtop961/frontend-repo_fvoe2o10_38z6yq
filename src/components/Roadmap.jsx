@@ -60,30 +60,34 @@ const phases = [
 
 export default function Roadmap() {
   return (
-    <section id="roadmap" className="py-16 bg-slate-50">
+    <section id="roadmap" className="py-16 bg-[#0b0f19]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Learning Roadmap</h2>
-        <p className="mt-2 text-slate-600 max-w-2xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">Learning Roadmap</h2>
+        <p className="mt-2 text-orange-100/80 max-w-2xl">
           Follow this path to progress from fundamentals to production-ready DevOps. Each phase includes hands-on labs and mini-projects.
         </p>
 
-        <ol className="mt-8 space-y-6">
-          {phases.map((phase) => (
-            <li key={phase.title} className="relative">
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <ol className="mt-8 space-y-6 relative">
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-orange-500/40 via-orange-400/20 to-transparent" />
+          {phases.map((phase, idx) => (
+            <li key={phase.title} className="relative pl-10">
+              <div className="absolute left-0 mt-1 h-8 w-8 rounded-full bg-[#0f1424] border-2 border-dashed border-orange-400/50 grid place-items-center text-orange-300">
+                {idx + 1}
+              </div>
+              <div className="rounded-2xl border-2 border-dashed border-orange-400/30 bg-[#0f1424] p-5 shadow-[0_0_0_6px_rgba(251,146,60,0.05)]">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">{phase.title}</h3>
-                    <p className="mt-1 text-sm text-slate-600">{phase.blurb}</p>
+                    <h3 className="text-lg font-semibold text-white">{phase.title}</h3>
+                    <p className="mt-1 text-sm text-orange-100/80">{phase.blurb}</p>
                   </div>
-                  <a href="#topics" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-indigo-700 hover:text-indigo-800">
+                  <a href="#topics" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-orange-300 hover:text-white">
                     Explore topics <ArrowRight size={16} />
                   </a>
                 </div>
                 <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
                   {phase.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
+                    <li key={item} className="flex items-start gap-2 text-sm text-orange-100">
+                      <CheckCircle2 className="text-orange-400 shrink-0 mt-0.5" size={18} />
                       <span>{item}</span>
                     </li>
                   ))}

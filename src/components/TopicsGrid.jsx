@@ -24,29 +24,29 @@ const topics = [
 
 export default function TopicsGrid() {
   return (
-    <section id="topics" className="py-16 bg-white">
+    <section id="topics" className="py-16 bg-[#0b0f19]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Curriculum Topics</h2>
-            <p className="mt-2 text-slate-600">19 carefully curated modules to take you from zero to production-ready DevOps.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Curriculum Topics</h2>
+            <p className="mt-2 text-orange-100/80">19 carefully curated modules to take you from zero to production-ready DevOps.</p>
           </div>
-          <a href="#roadmap" className="hidden md:inline-flex text-sm font-semibold text-indigo-700 hover:text-indigo-800">See Roadmap →</a>
+          <a href="#roadmap" className="hidden md:inline-flex text-sm font-semibold text-orange-300 hover:text-white">See Roadmap →</a>
         </div>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {topics.map(({ title, desc, Icon }) => (
-            <article key={title} className="group relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+            <article key={title} className="group relative rounded-2xl border-2 border-dashed border-orange-400/30 bg-[#0f1424] p-5 shadow-[0_0_0_6px_rgba(251,146,60,0.05)] hover:shadow-[0_0_0_8px_rgba(251,146,60,0.08)] transition">
               <div className="flex items-start gap-3">
-                <div className="shrink-0 p-2 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-slate-100 text-indigo-700">
+                <div className="shrink-0 p-2 rounded-xl bg-orange-500/10 border border-orange-400/30 text-orange-300">
                   <Icon size={20} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 leading-snug">{title}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{desc}</p>
+                  <h3 className="font-semibold text-white leading-snug">{title}</h3>
+                  <p className="mt-1 text-sm text-orange-100/80">{desc}</p>
                 </div>
               </div>
-              <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-indigo-600/0 via-indigo-600/40 to-purple-600/0 opacity-0 group-hover:opacity-100 transition" />
+              <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition" />
             </article>
           ))}
         </div>
